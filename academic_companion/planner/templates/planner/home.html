@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 2rem 1rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+
+        .cta {
+            margin-top: 2rem;
+            background: #4a90e2;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cta:hover {
+            background: #3a78c2;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta {
+                width: 80%;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EduBuddy</h1>
+        <p class="tagline">Your Smart Academic Companion</p>
+    </header>
+    <main>
+        <h2>Welcome!</h2>
+        <p>Keep track of your assignments</p>
+        <button class="cta" onclick="location.href='/login'">Get Started</button>
+    </main>
+</body>
+</html>

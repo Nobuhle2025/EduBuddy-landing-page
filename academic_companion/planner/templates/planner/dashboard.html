@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard – Study Buddy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #eef3f7;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+        }
+        .card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        .tab-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+        .tab-button {
+            padding: 1rem 2rem;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .tab-button:hover {
+            background-color: #4a90e2;
+            color: white;
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        a.button:hover {
+            background-color: #3a78c2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+     
+            <h1>Welcome to Your Dashboard</h1>
+            <!-- Reminder Icon Link -->
+           
+                <i class="fas fa-bell reminder-icon"></i>
+            </a>
+        
+    </header>
+    <main>
+        <div class="card">
+            <h2>Hello, {{ request.user.username }} 👋</h2>
+
+            <p> Manage your assignments on the tab below.</p>
+            <!-- Navigation Tabs -->
+            <div class="tab-buttons">
+                <a href="{% url 'assignments' %}" class="tab-button">📚 Your Assignments</a>
+               
+            </div>
+
+            
+
+            <a href="{% url 'logout' %}" class="button">Logout</a>
+        </div>
+    </main>
+</body>
+</html>

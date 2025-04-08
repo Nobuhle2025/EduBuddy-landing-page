@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Class Schedule</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .class-schedule {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .class-schedule table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .class-schedule th, .class-schedule td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    .class-schedule th {
+      background-color: #4a90e2;
+      color: white;
+    }
+    .back-to-dashboard {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4a90e2;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .back-to-dashboard:hover {
+      background-color: #357ab7;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Class Schedule</h1>
+  <div class="class-schedule">
+    {% if schedule %}
+      <table>
+        <thead>
+          <tr>
+            <th>Class Name</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in schedule %}
+            <tr>
+              <td>{{ item.class_name }}</td>
+              <td>{{ item.class_day }}</td>
+              <td>{{ item.class_time_start|time:"g:i A" }} - {{ item.class_time_end|time:"g:i A" }}</td>
+              <td>{{ item.location }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No classes scheduled yet.</p>
+    {% endif %}
+    <a href="{% url 'dashboard' %}" class="back-to-dashboard">Back to Dashboard</a>
+  </div>
+</body>
+</html>

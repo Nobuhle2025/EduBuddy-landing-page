@@ -1,0 +1,46 @@
+<style>
+    form {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        background-color: #f5faff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    form p {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="datetime-local"],
+    form input[type="number"],
+    form input[type="password"],
+    form textarea,
+    form select {
+        width: 100%;
+        padding: 0.9rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+        margin-top: 0.3rem;
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+
+    form label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        color: #444;
+    }
+</style>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
