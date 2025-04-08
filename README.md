@@ -1,0 +1,2 @@
+# EduBuddy landing page
+ 
